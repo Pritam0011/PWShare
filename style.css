@@ -1,0 +1,319 @@
+:root{
+    --main-bg:#d7d8c9;
+    --main-border: #E6DB3D;
+    --container-width:31.25rem;
+    --light-blue: #03a9f4;
+    --dark-blue: #028bca;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--main-bg);
+    overflow: hidden;
+}
+.logo{
+    position: absolute;
+    width:130px;
+    top: 15px;
+    left: 20px;
+    background-color: yellow;
+    box-shadow: 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow,
+    0 0 40px yellow;
+}
+.bbtn{
+    position: absolute;
+    bottom: 10px;
+}
+body,.drop-area,.upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    flex-direction: row;
+}
+
+.sideimg{
+    background: url(./util/side.svg) no-repeat center;
+    background-size: contain;
+    height: 50vh;
+    width: 50vw;
+}
+.upload{
+    background-color: #fff;
+    border-radius: .9375rem;
+    box-shadow: .75rem .9375rem 1.25rem 0rem #0000003b;
+}
+.drop-area{
+    width: var(--container-width);
+    min-height: 12.5rem;
+    border: .125rem dashed var(--main-border);
+    margin: 1.5625rem;
+    border-radius: .9375rem;
+    transition: all .25s ease-in-out;
+}
+.dragged.drop-area{
+    background-color: var(--main-bg);
+    border-color: #f5c56d;
+}
+
+.icon{
+    width: 5.625rem;
+    height: 6.25rem;
+}
+.icon img{
+    /* filter: hue-rotate(215deg); */
+    width: 5.625rem;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform .25s ease-in-out;
+}
+.icon .center{
+    z-index: 2;
+}
+.icon .right,.icon .left{
+    filter: grayscale(.45);
+}
+.dragged .icon .right{
+    transform: rotate(10deg) translateX(1.875rem) translateY(3px) scale(.88);   
+}
+.dragged .icon .left{
+    transform: rotate(-10deg) translateX(-1.875rem) translateY(3px) scale(.88);
+}
+.dragged .icon .center{
+    transform: translateY(-2px);
+}
+#fileIpt{
+    display: none;
+}
+.browseBtn{
+    color:#0b9df8f2 ;
+    cursor: pointer;
+}
+#orspan{
+    font-size: small;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+.prog-con{
+    position: relative;
+    width: var(--container-width);
+    height: 4.375rem;
+    border: 2px solid --dark-blue;
+    margin-bottom: 1.5625rem;
+    border-radius: .625rem;
+    display: none;
+}
+.bg-prog{
+    position: absolute;
+    background: var(--main-bg);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-origin: left;
+    transition: all .3s linear;
+}
+.in-con{
+    position: absolute;
+    z-index: 2;
+    margin: .625rem .9375rem;
+    width: calc(100% - 1.875rem);
+}
+.per-con{
+    font-size: 13px;
+    margin: 5px;
+}
+.prog-bar{
+    background: var(--light-blue);
+    width: 100%;
+    height: 3px;
+    border-radius: .3125rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s linear;
+    box-shadow: 0 0 1px var(--light-blue), 0 0 1px var(--light-blue), 0 0 1px var(--light-blue), 0 0 1px var(--light-blue),
+    0 0 5px var(--light-blue);
+}
+
+.link-shareing-con{
+    width: var(--container-width);
+    margin: .625rem;
+    transform: translateY(-25px);
+    display: none;
+}
+
+.link-con{
+    position: relative;
+}
+
+.link-shareing-con .link-con input{
+    background-color:#d7d8c973;
+    width: 100%;
+    border: 2px dashed var(--main-border);
+    border-radius: .3125rem;
+    padding: .625rem 28px .625rem 28px;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+}
+#afileUrl{
+    cursor: pointer;
+}
+.link-con #copyBtn{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #d7d8c973;
+    cursor: pointer;
+}
+.link-con #visitBtn{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    color: #d7d8c973;
+    cursor: pointer;
+}
+p,.email-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.expire{
+    color: red;
+}
+#mailspan{
+    display: none;
+}
+.email-con form{
+    width: 100%;
+    border: 2px solid var(--main-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.email-con label{
+    font-size: 18px;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 5px 0;
+    position: relative;
+    border-radius: 4px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    
+  }
+  
+  .styled-input label {
+    color: #010101;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    transform: translateX(57px);
+  }
+#relebel label{
+    left: -18px;
+}
+.sendve-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 8px 30px;
+    background-color: #f4eb72;
+    border: var(--main-border);
+    border-radius: 7px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+button:hover{
+    background-color: var(--main-border);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    font-weight: bold;
+}
+button:active{
+    background-color: #dace1d;
+}
+.email-con input {
+  padding: 5px 0;
+  margin: 10px 0;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid var(--light-blue);
+  text-align: center;
+}
+
+
+input:focus{
+  outline: 0;
+}
+.link-shareing-con .link-con input:focus{
+    outline: 1;
+    border: 2px solid var(--main-border);
+}
+
+.email-con input:focus ~ span {
+  width: 100%;
+  -webkit-transition: all 0.075s ease;
+  transition: all 0.075s ease;
+}
+
+.email-con input:focus ~ label,
+.email-con input:valid ~ label {
+  font-size: 15px;
+  color: #010101;
+  top: 60px;
+  -webkit-transition: all 0.225s ease;
+  transition: all 0.225s ease;
+}
+.email-con #emailSender:focus ~ label,
+.email-con #emailSender:valid ~ label{
+  top: 70px;
+    color: white;
+}
+.email-con #emailReceiver:focus ~ label,
+.email-con #emailReceiver:valid ~ label{
+  top: -90px;
+    color: white;
+}
+
+.ale{
+    position: absolute;
+    top: .625rem;
+    left: 50%;
+    transform: translate(-50%,-3.75rem);
+    padding: .625rem 1.25rem;
+    border-radius: .3125rem;
+    background: rgb(255, 255, 2);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24) ;
+    transition: transform ease-in-out 0.2s;
+}
+
+@media screen and (max-width:900px) {
+    :root{
+        --container-width:20rem
+    }
+    .sideimg{
+        display: none;
+    }
+    
+}
