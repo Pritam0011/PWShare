@@ -300,7 +300,7 @@ input:focus{
     position: absolute;
     top: .625rem;
     left: 50%;
-    transform: translate(-50%,-3.75rem);
+    transform: translate(-50%,-100px);
     padding: .625rem 1.25rem;
     border-radius: .3125rem;
     background: rgb(255, 255, 2);

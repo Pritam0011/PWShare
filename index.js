@@ -44,7 +44,7 @@ const showAle=(msg)=>{
     ale.style.transform='translate(-50%,0)';
     clearTimeout(aleTimer)
     aleTimer=setTimeout(()=>{
-    ale.style.transform='translate(-50%,-3.75rem)'
+    ale.style.transform='translate(-50%,-100px)'
     },2000)
 }
 
@@ -132,7 +132,7 @@ emailForm.addEventListener('submit', (e)=>{
             bbtn.style.display='block'
             sendvem.style.display='block';
             // sendveCon.style.float='right';
-            showAle('Email Send Successfully')
+            showAle('Email Send')
         }else{
             showAle(`Can't Send Twice!`)
         }
