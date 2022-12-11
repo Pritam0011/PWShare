@@ -1,71 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWShare</title>
-    <link rel="shortcut icon" href="./util/W1.png" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./gl-back.css">
-</head>
-<body>
-        <img src="./util/light1.png" alt="logo"   draggable="false" class="logo">
-    <div class="sideimg">
-    </div>
-    <section class="upload">
-        <div class="drop-area">
-            <div class="icon">
-                <img src="./util/upload.png" alt="fileUpload" class="center" draggable="false">
-                <img src="./util/upload.png" alt="fileUpload" class="left" draggable="false">
-                <img src="./util/upload.png" alt="fileUpload" class="right" draggable="false">
-            </div>
-            <input type="file" id="fileIpt"/>
-            <div class="icon-title"><b>Drag your file here</b> <br> <div id="orspan">Or, <span class="browseBtn">choose your file</span></div></div>
-        </div>
-        <div class="prog-con">
-            <div class="bg-prog"></div>
-            <div class="in-con">
-                <div class="uptitle">Uploading File...</div>
-                <div class="per-con"><span id="per">0</span>% </div>
-                <div class="prog-bar"></div>
-            </div>
-        </div>
-        <div class="link-shareing-con">
-            <p class="expire"><span><b>Link expires in 24 hours</b></span></p>
-            <div class="link-con">
-                <img id="visitBtn" src="./util/visit.svg" alt="visit" width="25px" draggable="false">
-                <a id="afileUrl" target="_blank"></a>
-                <input type="text" name="fileUrl" readonly id="fileUrl">
-                <img id="copyBtn" src="./util/copy.svg" alt="copy" width="25px" draggable="false">
-            </div>
-            <div class="sendve-con"><button id="sendvem" >Send Via Email</button></div>
-            <span id="mailspan">
-            <p class="pemail"><span style="letter-spacing: 1px;color: rgb(4, 90, 101);"><b>Send Via Email</b></span></p>
-            <div class="email-con">
-                <form id="emailForm">
-                    <div class="styled-input">
-                        <input type="email" id="emailSender" required name="emailFrom" id="emailSender" autocomplete="off">
-                        <label for="">Enter Your Email</label>
-                    </div>
-                    <div class="styled-input" id="relebel">
-                        <input type="email" required name="emailTo" id="emailReceiver" autocomplete="off">
-                        <label for="">Enter receiver's Email</label>
-                    </div>
-                    <button type="submit"><b>Send</b></button>
-                </form>
-            </div>
-            </span>
-        </div>
-    </section>
-    <div class="ale"><b>okay alert</b></div>
-    <div class="bbtn">
-        <div class="gl_container">
-          <a href="//bit.ly/pritamweb2"
-            ><span>Pritam Web</span></a
-          >
-        </div>
-      </div>
-    <script src="index.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PWShare</title>
+		<link rel="shortcut icon" href="./util/W1.png" type="image/x-icon" />
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./gl-back.css" />
+	</head>
+	<body>
+		<img src="./util/light1.png" alt="logo" draggable="false" class="logo" />
+		<div class="sideimg"></div>
+		<section class="upload">
+			<div class="drop-area">
+				<div class="icon">
+					<img
+						src="./util/upload.png"
+						alt="fileUpload"
+						class="center"
+						draggable="false"
+					/>
+					<img
+						src="./util/upload.png"
+						alt="fileUpload"
+						class="left"
+						draggable="false"
+					/>
+					<img
+						src="./util/upload.png"
+						alt="fileUpload"
+						class="right"
+						draggable="false"
+					/>
+				</div>
+				<input type="file" id="fileIpt" />
+				<div class="icon-title">
+					<b>Drag your file here</b> <br />
+					<div id="orspan">
+						Or, <span class="browseBtn">choose your file</span>
+					</div>
+				</div>
+			</div>
+			<div class="prog-con">
+				<div class="bg-prog"></div>
+				<div class="in-con">
+					<div class="uptitle">Uploading File...</div>
+					<div class="per-con"><span id="per">0</span>%</div>
+					<div class="prog-bar"></div>
+				</div>
+			</div>
+			<div class="link-shareing-con">
+				<p class="expire">
+					<span><b>Link expires in 24 hours</b></span>
+				</p>
+				<div class="link-con">
+					<img
+						id="visitBtn"
+						src="./util/visit.svg"
+						alt="visit"
+						width="25px"
+						draggable="false"
+					/>
+					<a id="afileUrl" target="_blank"></a>
+					<input type="text" name="fileUrl" readonly id="fileUrl" />
+					<img
+						id="copyBtn"
+						src="./util/copy.svg"
+						alt="copy"
+						width="25px"
+						draggable="false"
+					/>
+				</div>
+				<div class="sendve-con">
+					<button id="sendvem">Send Via Email</button>
+				</div>
+				<div class="sendve-con">
+					<a target="_blank" href="https://www.pritamweb.live/qrgen" id="qr"
+						>Make QR code of this link</a
+					>
+				</div>
+				<span id="mailspan">
+					<p class="pemail">
+						<span style="letter-spacing: 1px; color: rgb(4, 90, 101)"
+							><b>Send Via Email</b></span
+						>
+					</p>
+					<div class="email-con">
+						<form id="emailForm">
+							<div class="styled-input">
+								<input
+									type="email"
+									id="emailSender"
+									required
+									name="emailFrom"
+									id="emailSender"
+									autocomplete="off"
+								/>
+								<label for="">Enter Your Email</label>
+							</div>
+							<div class="styled-input" id="relebel">
+								<input
+									type="email"
+									required
+									name="emailTo"
+									id="emailReceiver"
+									autocomplete="off"
+								/>
+								<label for="">Enter receiver's Email</label>
+							</div>
+							<button type="submit"><b>Send</b></button>
+						</form>
+					</div>
+				</span>
+			</div>
+		</section>
+		<div class="ale"><b>okay alert</b></div>
+		<div class="bbtn">
+			<div class="gl_container">
+				<a href="https://www.pritamweb.live/"><span>Pritam Web</span></a>
+			</div>
+		</div>
+		<script src="index.js"></script>
+	</body>
 </html>
